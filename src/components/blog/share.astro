@@ -1,0 +1,73 @@
+---
+import type { IconType } from "react-icons";
+import { icons } from "../../utils/helpers";
+import { FaLink } from "react-icons/fa";
+import { url, name } from "../../application.json";
+
+interface SocialShare {
+    name: string;
+    url: string;
+    icon: IconType;
+}
+
+interface Props {
+    title: string;
+    description: string;
+}
+
+const { title, description } = Astro.props;
+
+const postURL = `${url}/blogs/${encodeURIComponent(title)}`;
+const message = `Check out this post on ${title} by ${name}.\n\nDive deep into an insightful exploration of ${description}.\n\nThis article is packed with valuable information and practical tips that you won't want to miss!\n\n Read it here: ${postURL}`;
+
+const socialShare: Array<SocialShare> = [
+    {
+        name: "Email",
+        url: `mailto:?subject=${encodeURIComponent("Check out this blog post")}&body=${encodeURIComponent(message)}`,
+        icon: icons.Email,
+    },
+    {
+        name: "Facebook",
+        url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(postURL)}&t=${encodeURIComponent(message)}`,
+        icon: icons.Facebook,
+    },
+    {
+        name: "Twitter",
+        url: `https://twitter.com/intent/tweet?url=${encodeURIComponent(postURL)}&text=${encodeURIComponent(message)}`,
+        icon: icons.Twitter,
+    },
+    {
+        name: "LinkedIn",
+        url: `https://www.linkedin.com/shareArticle?url=${encodeURIComponent(postURL)}&text=${encodeURIComponent(message)}`,
+        icon: icons.LinkedIn,
+    },
+];
+---
+
+<div class="flex gap-2">
+    <button id="copy-link" type="button" title="Copy Link">
+        <FaLink className="size-4 text-primary" />
+    </button>
+    {
+        socialShare.map(({ name, url, icon: Icon }) => {
+            return (
+                <a
+                    href={url}
+                    aria-label={name}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <Icon className="size-4 text-primary" />
+                </a>
+            );
+        })
+    }
+</div>
+
+<script>
+    const copyLink = document.getElementById("copy-link");
+    copyLink &&
+        copyLink.addEventListener("click", () => {
+            navigator.clipboard.writeText(window.location.href);
+        });
+</script>

@@ -1,0 +1,32 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import BlogLayout from "../../layouts/Blog Layout.astro";
+import { calculateReadingTime } from "../../utils/helpers";
+
+export const prerender = true;
+
+export const getStaticPaths = async () => {
+    const posts = await getCollection("posts");
+    const path = posts.map((post) => {
+        return {
+            params: { slug: post.slug },
+            props: {
+                post,
+            },
+        };
+    });
+    return path;
+};
+
+interface Props {
+    post: CollectionEntry<"posts">;
+}
+
+const { post } = Astro.props;
+const { data, body } = post;
+const { Content } = await post.render();
+---
+
+<BlogLayout data={data} readingTime={calculateReadingTime(body)}>
+    <Content />
+</BlogLayout>

@@ -1,0 +1,89 @@
+{
+    "name": "Pavitra Pheres",
+    "url": "www.pavitrapheres.com",
+    "keywords": "uttarakhand wedding destination, destination wedding places in uttarakhand, destination wedding uttarakhand, destination wedding venues",
+    "tagline": " Crafting Timeless Memories Amidst Himalayan Serenity.",
+    "description": "Discover your dream wedding in Uttarakhand with Pavitra Pheres – your ultimate guide to destination weddings amidst the Himalayas. Create lasting memories with our curated resources.",
+    "logo": "/pavitra_pheres_logo.png",
+    "color": {
+        "primary": "#FFA500",
+        "secondary": "#006400",
+        "accent": "#FFFFFF"
+    },
+    "navigation": {
+        "links": [
+            {
+                "name": "Home",
+                "url": "/"
+            },
+            {
+                "name": "Blogs",
+                "url": "/blogs"
+            },
+            {
+                "name": "Destinations",
+                "url": "/destinations"
+            },
+            {
+                "name": "About",
+                "url": "/about"
+            },
+            {
+                "name": "Contact",
+                "url": "/contact"
+            }
+        ],
+        "cta": "Consult",
+        "legal": [
+            {
+                "name": "Privacy",
+                "url": "/privacy"
+            },
+            {
+                "name": "Terms",
+                "url": "/terms"
+            },
+            {
+                "name": "Sitemap",
+                "url": "/sitemap"
+            },
+            {
+                "name": "Imprint"
+            }
+        ]
+    },
+    "features": [
+        "Destination wedding Venues",
+        "Vendor directory",
+        "Real wedding stories",
+        "Planning tips and advice",
+        "Local traditions and customs",
+        "Photo galleries",
+        "Budget calculators",
+        "Travel and accommodation recommendations"
+    ],
+    "social": [
+        {
+            "name": "Twitter",
+            "url": "https://twitter.com/pavitrapheres"
+        },
+        {
+            "name": "Instagram",
+            "url": "https://www.instagram.com/pavitrapheres/"
+        },
+        {
+            "name": "Facebook",
+            "url": "https://www.facebook.com/pavitrapheres/"
+        }
+    ],
+    "contact": {
+        "email": "info@pavitrapheres.com",
+        "phone": "+1234567890",
+        "address": "123 Uttarakhand Street, Dehradun, Uttarakhand, India"
+    },
+    "fonts": {
+        "primary": "Montserrat",
+        "secondary": "Roboto",
+        "accent": "Roboto"
+    }
+}

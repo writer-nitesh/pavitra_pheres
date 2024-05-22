@@ -1,0 +1,15 @@
+---
+import Layout from "../layouts/Layout.astro";
+import TextPage from "../layouts/Text Page.astro";
+import { contact } from "../application.json";
+---
+
+<Layout title="Contact Us">
+    <TextPage title="Contact Us">
+        <div class="h-96 flex items-center justify-center">
+            <a class="lg:text-4xl text-xl" href="mailto:{contact.email}">
+                {contact.email}
+            </a>
+        </div>
+    </TextPage>
+</Layout>

@@ -1,0 +1,42 @@
+---
+import { description, name, url, keywords } from "../application.json";
+
+interface Props {
+    isBlog?: boolean;
+    title?: string;
+    desc?: string;
+    keyword?: string;
+    image: string;
+}
+
+const {
+    isBlog = false,
+    title = name,
+    desc = description,
+    keyword = keywords,
+    image,
+} = Astro.props;
+---
+
+<title>
+    {isBlog ? `${title} | ${name}` : title}
+</title>
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content={url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={desc ? desc : description} />
+<meta property="og:image" content={image} />
+<meta property="og:image:alt" content="Image description for accessibility" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={url} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={desc ? desc : description} />
+<meta name="twitter:image" content={image} />
+
+<meta name="description" content={desc ? desc : description} />
+<meta name="keywords" content={keyword} />
+<meta name="author" content={name} />
+<meta name="robots" content="index, follow" />
+

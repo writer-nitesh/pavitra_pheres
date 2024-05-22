@@ -1,0 +1,30 @@
+---
+interface Props {
+    imgSourceName: string;
+    imgSourceLink: string;
+}
+
+const { imgSourceName, imgSourceLink } = Astro.props;
+---
+
+<div class="flex flex-col justify-center items-center">
+    <slot />
+    <div>
+        {
+            imgSourceName && (
+                <span class="w-full h-full flex items-center justify-center gap-2">
+                    <span class="font-medium">Image Source:</span>
+                    <a
+                        aria-label={imgSourceName}
+                        href={"https://"+imgSourceLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-primary hover:underline"
+                    >
+                        {imgSourceName}
+                    </a>
+                </span>
+            )
+        }
+    </div>
+</div>

@@ -1,0 +1,41 @@
+---
+import Share from "./share.astro";
+import { FaClock, FaCalendar } from "react-icons/fa";
+
+interface Props {
+    pubDate: string | Date;
+    readingTime: string;
+    showShareLinks?: boolean;
+}
+
+const { readingTime, pubDate, showShareLinks = false } = Astro.props;
+---
+
+<div>
+    <div class="flex justify-between items-center">
+        <div class="flex gap-2 justify-center items-center">
+            <FaCalendar color="#6b7280" size={15} />
+            <span class="text-sm text-gray-500">
+                {
+                    new Date(pubDate).toLocaleDateString("en-US", {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                    })
+                }
+            </span>
+        </div>
+        <div class="flex gap-2 justify-center items-center">
+            <FaClock color="#6b7280" size={15} />
+            <span class="text-sm text-gray-500">{readingTime}</span>
+        </div>
+
+        {
+            showShareLinks && (
+                <div class=" gap-2 justify-center items-center lg:flex hidden">
+                    <slot />
+                </div>
+            )
+        }
+    </div>
+</div>

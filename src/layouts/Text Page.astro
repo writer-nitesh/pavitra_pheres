@@ -1,0 +1,15 @@
+---
+import "../styles/global.css";
+interface Props {
+    title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<div class="flex flex-col items-center">
+    <div class="prose my-8 lg:mx-0 mx-4 flex items-center flex-col prose-slate">
+        <h1>{title}</h1>
+        <slot />
+    </div>
+</div>

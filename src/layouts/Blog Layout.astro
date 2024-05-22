@@ -1,0 +1,69 @@
+---
+import { Image } from "astro:assets";
+import Info from "../components/blog/info.astro";
+import Share from "../components/blog/share.astro";
+import Layout from "./Layout.astro";
+import type { InferEntrySchema, z } from "astro:content";
+import Img from "../components/blog/img.astro";
+
+interface Props {
+    data: InferEntrySchema<"posts">;
+    readingTime: string;
+}
+const { data, readingTime } = Astro.props;
+const {
+    title,
+    description,
+    pubDate,
+    tableOfContents,
+    cover,
+    coverAlt,
+    coverImgSourceLink,
+    coverImgSourceName,
+} = data;
+---
+
+<Layout title={title}>
+    <div class="flex flex-col items-center px-3 lg:px-0 mt-4 mb-4">
+        <article class="prose prose-gray">
+            <section>
+                <h1 class="lg:text-4xl text-2xl leading-relaxed">{title}</h1>
+
+                <Info
+                    showShareLinks
+                    pubDate={pubDate}
+                    readingTime={readingTime}
+                >
+                    <Share title={title} description={description} />
+                </Info>
+                <p>{description}</p>
+                <Img
+                    imgSourceLink={coverImgSourceLink}
+                    imgSourceName={coverImgSourceName}
+                >
+                    <Image
+                        src={cover}
+                        alt={coverAlt}
+                        class={"object-cover p-0 w-full h-full rounded-lg"}
+                    />
+                </Img>
+            </section>
+
+            <div class="bg-gray-100 rounded-md p-4 mt-4 flex flex-col gap-3">
+                <div class="text-xl font-bold">Table of Contents</div>
+                <div class="space-y-2">
+                    {
+                        tableOfContents.map((heading) => (
+                            <h6 class="hover:text-primary">{heading}</h6>
+                        ))
+                    }
+                </div>
+            </div>
+            <slot />
+            <div class="flex flex-col items-center justify-center pb-2">
+                <h3>Share This Post</h3>
+                <Share title={title} description={description} />
+            </div>
+        </article>
+    </div>
+</Layout>
