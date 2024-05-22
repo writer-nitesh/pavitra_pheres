@@ -13,13 +13,13 @@ const { imgSourceName, imgSourceLink } = Astro.props;
         {
             imgSourceName && (
                 <span class="w-full h-full flex items-center justify-center gap-2">
-                    <span class="font-medium">Image Source:</span>
+                    <span class="font-medium text-sm">Image Source:</span>
                     <a
                         aria-label={imgSourceName}
                         href={"https://"+imgSourceLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="text-primary hover:underline"
+                        class="text-primary text-sm hover:underline capitalize"
                     >
                         {imgSourceName}
                     </a>

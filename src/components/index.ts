@@ -1,4 +1,4 @@
 export * from "./navbar"
-export * from "./logo"
-export * from "./footer"
+export * from "./logo.astro"
+export * from "./footer.astro"
 export * from "./hero"

@@ -1,0 +1,16 @@
+---
+import { Image } from "astro:assets";
+import { logo } from "../application.json";
+---
+
+<a aria-label="Pavitra Pheres" href="/">
+    <Image
+        src={logo}
+        alt="Pavitra Pheres Logo"
+        aria-label="Pavitra Pheres Logo"
+        sizes={"50vh"}
+        height={150}
+        width={150}
+        loading="eager"
+    />
+</a>

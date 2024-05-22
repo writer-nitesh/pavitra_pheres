@@ -1,11 +1,10 @@
 
 import { navigation } from "../application.json";
 import { useEffect, useState } from "react";
-import { Logo } from "./logo";
 import { Hero } from "./hero";
 import { HiBars3 } from 'react-icons/hi2'
 
-export function Navbar() {
+export function Navbar({ children }: { children: any }) {
     const { cta, links } = navigation;
     const [currentPath, setCurrentPath] = useState(window.location.pathname);
     const [openNavbar, setOpenNavbar] = useState(false)
@@ -23,7 +22,7 @@ export function Navbar() {
         <header className={`flex flex-col ${currentPath === "/" && "hero_bg"}`}>
 
             <div className="flex  items-center justify-between p-4 ">
-                <Logo />
+                {children}
                 <div className='lg:hidden md:hidden flex items-center justify-center'>
                     <button type="button" onClick={() => { setOpenNavbar(!openNavbar) }} title="Toggle Navigation">
                         <HiBars3 className='size-6' />
