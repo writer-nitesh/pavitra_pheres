@@ -27,15 +27,18 @@ const mustReadPost = await getCollection("posts", ({ data }) => {
                         Latest Post
                     </h1>
                 </div>
-                {mustReadPost.slice(0, 4).map(({ body, data, slug }) => {
-                    return (
-                        <Card
-                            link={`/blogs/${slug}`}
-                            data={data}
-                            readingTime={calculateReadingTime(body)}
-                        />
-                    );
-                })}
+                <div class="flex flex-wrap gap-8 justify-start">
+                    {mustReadPost.slice(0, 4).map(({ body, data, slug }) => {
+                        return (
+                            <Card
+                                loading="lazy"
+                                link={`/blogs/${slug}`}
+                                data={data}
+                                readingTime={calculateReadingTime(body)}
+                            />
+                        );
+                    })}
+                </div>
             </section>
         )
     }
@@ -48,15 +51,18 @@ const mustReadPost = await getCollection("posts", ({ data }) => {
                         Featured Post
                     </h1>
                 </div>
-                {featruedPost.slice(0, 8).map(({ body, data, slug }) => {
-                    return (
-                        <Card
-                            link={`/blogs/${slug}`}
-                            data={data}
-                            readingTime={calculateReadingTime(body)}
-                        />
-                    );
-                })}
+                <div class="flex flex-wrap gap-8 justify-start">
+                    {featruedPost.slice(0, 8).map(({ body, data, slug }) => {
+                        return (
+                            <Card
+                                loading="lazy"
+                                link={`/blogs/${slug}`}
+                                data={data}
+                                readingTime={calculateReadingTime(body)}
+                            />
+                        );
+                    })}
+                </div>
             </section>
         )
     }

@@ -1,0 +1,74 @@
+---
+import { navigation } from "../application.json";
+import { HiBars3 } from "react-icons/hi2";
+import Logo from "./logo.astro";
+import Hero from "./hero.astro";
+const { links } = navigation;
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class={`flex flex-col ${currentPath === "/" && "hero_bg"}`}>
+    <div class="flex items-center justify-between p-4">
+        <Logo loading="eager" />
+        <div
+            id="toggle-nav"
+            class="lg:hidden md:hidden flex items-center justify-center"
+        >
+            <button type="button" title="Toggle Navigation" class="size-8">
+                <HiBars3 />
+            </button>
+        </div>
+
+        <nav class="lg:flex hidden">
+            <ul class="lg:flex gap-8 hidden">
+                {
+                    links.map(({ name, url }) => (
+                        <li>
+                            <a
+                                aria-label={name}
+                                class={`uppercase font-medium ${currentPath === url && "text-primary"}`}
+                                href={url}
+                            >
+                                {name}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </nav>
+        {
+            /* <button class="bg-secondary text-white font-bold px-4 py-2 hidden lg:block rounded-md" type="button">{cta} </button> */
+        }
+    </div>
+    <nav id="mobile-nav" class="hidden">
+        <ul class="flex items-center my-2 flex-col gap-4 lg:hidden">
+            {
+                links.map(({ name, url }) => (
+                    <li>
+                        <a
+                            aria-label={name}
+                            class={`uppercase font-medium ${currentPath === url && "text-primary"}`}
+                            href={url}
+                        >
+                            {name}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </nav>
+    {currentPath === "/" && <Hero />}
+</header>
+
+<script>
+    const toggleNav = document.getElementById("toggle-nav");
+    const moblieNav = document.getElementById("mobile-nav");
+
+    toggleNav &&
+        toggleNav.addEventListener("click", () => {
+            if (moblieNav) {
+                moblieNav.classList.toggle("hidden");
+            }
+        });
+</script>

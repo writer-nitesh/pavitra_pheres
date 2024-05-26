@@ -1,16 +1,23 @@
 ---
 import { Image } from "astro:assets";
 import { logo } from "../application.json";
+
+interface Props {
+    loading: "eager" | "lazy";
+}
+const { loading } = Astro.props;
 ---
 
 <a aria-label="Pavitra Pheres" href="/">
     <Image
+        decoding="auto"
         src={logo}
         alt="Pavitra Pheres Logo"
         aria-label="Pavitra Pheres Logo"
-        sizes={"50vh"}
         height={150}
         width={150}
-        loading="eager"
+        loading={loading}
+        format="webp"
+        quality={"mid"}
     />
 </a>

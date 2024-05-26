@@ -18,7 +18,7 @@ interface Props {
 const { title, description } = Astro.props;
 
 const postURL = `${url}/blogs/${encodeURIComponent(title)}`;
-const message = `Check out this post on ${title} by ${name}.\n\nDive deep into an insightful exploration of ${description}.\n\nThis article is packed with valuable information and practical tips that you won't want to miss!\n\n Read it here: ${postURL}`;
+const message = `Check out this post on ${title} by ${name}.\n\nDive deep into an insightful exploration of ${description}.\n\nThis article is packed with valuable information that you won't want to miss!\n\nRead it here: ${postURL}`;
 
 const socialShare: Array<SocialShare> = [
     {

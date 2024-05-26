@@ -1,9 +1,7 @@
 ---
 import "../styles/global.css";
-import { Navbar } from "../components";
 import Footer from "../components/footer.astro";
-import Logo from "../components/logo.astro";
-// import Navbar from "../components/navbar.astro";
+import Navbar from "../components/navbar.astro";
 export const prerender = true;
 ---
 
@@ -16,10 +14,7 @@ export const prerender = true;
 		<slot name="meta" />
 	</head>
 	<body>
-		<Navbar client:only>
-			<Logo />
-		</Navbar>
-		<!-- <Navbar /> -->
+		<Navbar />
 		<main>
 			<slot />
 		</main>

@@ -10,7 +10,7 @@ const CATEGORIES = [
     'Legal Requirements',
     'Budgeting Tips',
     'Guest Activities',
-    'Cultural Experiences',
+    'Destination Weddings',
     'Cultural Heritage'
 ] as const
 

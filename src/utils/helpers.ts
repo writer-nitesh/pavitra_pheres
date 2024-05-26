@@ -18,7 +18,7 @@ export const icons: { [key in SocialIcons]: IconType } = {
     LinkedIn: FaLinkedin
 }
 
-export const socialIcons = {
+export const socialIcons: { [key: string]: IconType } = {
     Twitter: FaTwitter,
     Facebook: FaFacebookF,
     Instagram: FaInstagram,

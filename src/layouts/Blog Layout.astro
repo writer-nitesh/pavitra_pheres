@@ -3,10 +3,10 @@ import { Image } from "astro:assets";
 import Info from "../components/blog/info.astro";
 import Share from "../components/blog/share.astro";
 import Layout from "./Layout.astro";
-import type { InferEntrySchema, z } from "astro:content";
+import type { InferEntrySchema } from "astro:content";
 import Img from "../components/blog/img.astro";
 import Meta from "../components/meta.astro";
-
+import Related from "../components/blog/related.astro";
 
 interface Props {
     data: InferEntrySchema<"posts">;
@@ -23,20 +23,21 @@ const {
     coverAlt,
     coverImgSourceLink,
     coverImgSourceName,
-    keywords
+    keywords,
+    relatedPosts
 } = data;
 ---
 
 <Layout title={title}>
-    <Meta 
-        slot="meta" 
+    <Meta
+        slot="meta"
         image={coverImgSourceLink}
         title={title}
         desc={description}
         keyword={keywords}
     />
     <div class="flex flex-col items-center px-3 lg:px-0 mt-4 mb-4">
-        <article class="prose prose-gray">
+        <div class="prose prose-gray">
             <section>
                 <h1 class="lg:text-4xl text-2xl leading-relaxed">{title}</h1>
 
@@ -71,11 +72,18 @@ const {
                     }
                 </div>
             </div>
-            <slot />
+            <article>
+                <slot />
+            </article>
             <div class="flex flex-col items-center justify-center pb-2">
                 <h3>Share This Post</h3>
                 <Share title={title} description={description} />
             </div>
-        </article>
+
+        
+                <Related relatedBlogs={relatedPosts} />
+            
+
+        </div>
     </div>
 </Layout>
