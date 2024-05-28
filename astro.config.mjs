@@ -11,19 +11,18 @@ import playformCompress from "@playform/compress";
 // https://astro.build/config
 export default defineConfig({
   site: "https://pavitrapheres.com",
-  integrations: [tailwind(), react(), mdx(),
-  sitemap(),
-  robotsTxt(),
-  playformCompress({
+  integrations: [tailwind(), react(), mdx(), sitemap(), robotsTxt(), playformCompress({
     JavaScript: true,
     HTML: true,
     CSS: true,
     SVG: true,
     Files: true,
-    Images: true,
-  })
-  ],
+    Images: true
+  })],
   output: "server",
-  adapter: cloudflare(),
-
+  adapter: cloudflare(
+    {
+      imageService: "cloudflare"
+    }
+  )
 });
