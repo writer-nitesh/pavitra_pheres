@@ -22,7 +22,7 @@ export default defineConfig({
   output: "server",
   adapter: cloudflare(
     {
-      imageService: "compile"
+      imageService: "passthrough"
     }
   )
 });
