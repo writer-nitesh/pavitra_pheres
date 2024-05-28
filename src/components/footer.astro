@@ -40,24 +40,21 @@ const currentYear = new Date().getFullYear();
         </div>
 
         <div class="flex lg:flex-row flex-col gap-10">
-            <div class="flex flex-col items-center">
-                <h2 class="font-bold">Page</h2>
-                <nav class="flex flex-col items-center">
+            <div class="flex flex-col items-start">
+                <h2 class="font-bold">Nav Links</h2>
+                <nav class="flex flex-col items-start">
                     {links.map(({ name, url }) => <a href={url}>{name}</a>)}
                 </nav>
             </div>
-            <div class="flex flex-col items-center">
+            <div class="flex flex-col items-start">
                 <h2 class="font-bold">Blogs</h2>
-                <span class="flex flex-col items-center">
-                    <a href="http://localhost:3000/blogs">Something </a>
+                <span class="flex flex-col items-start">
+                    <a href="/cultural-heritage">Cultural Heritage </a>
+                    <a href="/destination">Destination </a>
+                    <a href="/destination">Planning </a>
                 </span>
             </div>
-            <div class="flex flex-col items-center">
-                <h2 class="font-bold">Legal</h2>
-                <span class="flex flex-col items-center">
-                    <a href="http://localhost:3000/blogs">Something </a>
-                </span>
-            </div>
+           
         </div>
     </div>
 

@@ -14,3 +14,16 @@ export const post6_faqs = [{
     "q": " How can I make my destination wedding eco-friendly?",
     "a": "Opt for sustainable vendors, minimize waste, and choose a location that practices environmental conservation."
 }]
+
+export const post7_faqs = [{
+    "q": "What are some budget-friendly wedding venues in Uttarakhand?",
+    "a": "Some budget-friendly venues include guest houses in Rishikesh, boutique hotels in Mussoorie, and homestays in Nainital."
+},
+{
+    "q": "How can I save on wedding decorations?",
+    "a": "DIY decorations using local flowers and materials can significantly cut down costs. Enlist the help of friends and family for added fun and savings."
+},
+{
+    "q": "When is the best time to book for a cheaper wedding?",
+    "a": "Booking during the off-peak season and securing your venue and vendors well in advance can help you get the best rates."
+}]

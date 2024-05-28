@@ -1,17 +1,9 @@
 import { defineCollection, z } from 'astro:content'
 
 const CATEGORIES = [
-    'Wedding Venues',
-    'Planning Tips',
-    'Local Traditions',
-    'Seasonal Considerations',
-    'Vendor Recommendations',
-    'Real Wedding Stories',
-    'Legal Requirements',
-    'Budgeting Tips',
-    'Guest Activities',
     'Destination Weddings',
-    'Cultural Heritage'
+    'Cultural Heritage',
+    'Wedding Planning',
 ] as const
 
 export const posts = defineCollection({
@@ -29,7 +21,6 @@ export const posts = defineCollection({
             coverImgSourceName: z.string(),
             coverImgSourceLink: z.string(),
             category: z.enum(CATEGORIES),
-            tags: z.array(z.string()),
             keywords: z.array(z.string()),
             draft: z.boolean().default(false),
             tableOfContents: z.array(z.string()),

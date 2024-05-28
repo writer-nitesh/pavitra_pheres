@@ -5,9 +5,18 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/card.astro";
 import { calculateReadingTime } from "../utils/helpers";
 
-const featruedPost = await getCollection("posts", ({ data }) => {
-    return data.tags.includes("featured");
+const heritage = await getCollection("posts", ({ data }) => {
+    return data.category.includes("Cultural Heritage");
 });
+
+const planning = await getCollection("posts", ({ data }) => {
+    return data.category.includes("Wedding Planning");
+});
+
+const destination = await getCollection("posts", ({ data }) => {
+    return data.category.includes("Destination Weddings");
+});
+
 const oneWeekLater = new Date();
 oneWeekLater.setDate(oneWeekLater.getDate() - 7);
 
@@ -22,10 +31,10 @@ const mustReadPost = await getCollection("posts", ({ data }) => {
     {
         mustReadPost.length > 0 && (
             <section class="flex flex-col items-start px-4">
-                <div class="flex flex-col items-center py-4 w-full">
-                    <h1 class="text-3xl font-bold text-secondary">
+                <div class="flex flex-col items-center py-8 w-full">
+                    <a href="/blogs" class="text-3xl font-bold text-secondary">
                         Latest Post
-                    </h1>
+                    </a>
                 </div>
                 <div class="flex flex-wrap gap-8 justify-start">
                     {mustReadPost.slice(0, 4).map(({ body, data, slug }) => {
@@ -44,15 +53,70 @@ const mustReadPost = await getCollection("posts", ({ data }) => {
     }
 
     {
-        featruedPost.length > 0 && (
+        heritage.length > 0 && (
             <section class="flex flex-col items-start px-4">
-                <div class="flex flex-col items-center py-4 w-full">
-                    <h1 class="text-3xl font-bold text-secondary">
-                        Featured Post
-                    </h1>
+                <div class="flex flex-col items-center py-8 w-full">
+                    <a
+                        href="/cultural-heritage"
+                        class="text-3xl font-bold text-secondary"
+                    >
+                        Cultural Heritage
+                    </a>
                 </div>
                 <div class="flex flex-wrap gap-8 justify-start">
-                    {featruedPost.slice(0, 8).map(({ body, data, slug }) => {
+                    {heritage.slice(0, 4).map(({ body, data, slug }) => {
+                        return (
+                            <Card
+                                loading="lazy"
+                                link={`/blogs/${slug}`}
+                                data={data}
+                                readingTime={calculateReadingTime(body)}
+                            />
+                        );
+                    })}
+                </div>
+            </section>
+        )
+    }
+    {
+        destination.length > 0 && (
+            <section class="flex flex-col items-start px-4">
+                <div class="flex flex-col items-center py-8 w-full">
+                    <a
+                        href="/destination"
+                        class="text-3xl font-bold text-secondary"
+                    >
+                        Wedding Destination
+                    </a>
+                </div>
+                <div class="flex flex-wrap gap-8 justify-start">
+                    {destination.slice(0, 4).map(({ body, data, slug }) => {
+                        return (
+                            <Card
+                                loading="lazy"
+                                link={`/blogs/${slug}`}
+                                data={data}
+                                readingTime={calculateReadingTime(body)}
+                            />
+                        );
+                    })}
+                </div>
+            </section>
+        )
+    }
+    {
+        planning.length > 0 && (
+            <section class="flex flex-col items-start px-4">
+                <div class="flex flex-col items-center py-8 w-full">
+                    <a
+                        href="/planning"
+                        class="text-3xl font-bold text-secondary"
+                    >
+                        Plan Your Dream Wedding
+                    </a>
+                </div>
+                <div class="flex flex-wrap gap-8 justify-start">
+                    {planning.slice(0, 4).map(({ body, data, slug }) => {
                         return (
                             <Card
                                 loading="lazy"
