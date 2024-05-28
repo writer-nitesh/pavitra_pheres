@@ -22,15 +22,7 @@ export default defineConfig({
   output: "server",
   adapter: cloudflare(
     {
-      image: {
-        service: {
-          entrypoint: 'astro/assets/services/sharp',
-          config: {
-            limitInputPixels: false,
-          },
-          domains: ['astro.build'],
-        },
-      },
+      imageService: "compile"
     }
   )
 });
