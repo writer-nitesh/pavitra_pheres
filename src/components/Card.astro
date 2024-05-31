@@ -1,10 +1,10 @@
 ---
-import type { InferEntrySchema } from "astro:content";
+// import type { InferEntrySchema } from "astro:content";
 import Info from "./blog/info.astro";
 import { Image } from "astro:assets";
 
 export interface Props {
-    data: InferEntrySchema<"posts">;
+    data: any
     link: string;
     readingTime: string;
     loading: "eager" | "lazy";

@@ -5,10 +5,5 @@
     "allowJs": true,
     "jsx": "react-jsx",
     "jsxImportSource": "react",
-    "paths": {
-      "@/*": [
-        "./src/components/*"
-      ]
-    }
   },
 }
