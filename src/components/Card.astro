@@ -3,7 +3,7 @@ import type { InferEntrySchema } from "astro:content";
 import Info from "./blog/info.astro";
 import { Image } from "astro:assets";
 
-interface Props {
+export interface Props {
     data: InferEntrySchema<"posts">;
     link: string;
     readingTime: string;
