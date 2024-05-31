@@ -20,10 +20,10 @@ export default defineConfig({
     Images: true
   })],
   output: "server",
-  adapter: cloudflare(),
-  image: {
-    service: {
-      entrypoint: 'astro/assets/services/noop'
+  adapter: cloudflare(
+    {
+      imageService: "cloudflare",
     }
-  }
+  ),
+
 });
