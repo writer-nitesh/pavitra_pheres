@@ -2,12 +2,15 @@
 import { FaClock, FaCalendar } from "react-icons/fa";
 
 interface Props {
-    pubDate: string | Date;
+    pubDate: Date;
     readingTime: string;
     showShareLinks?: boolean;
 }
 
+
 const { readingTime, pubDate, showShareLinks = false } = Astro.props;
+console.log(pubDate);
+console.log( typeof(pubDate));
 ---
 
 <div>

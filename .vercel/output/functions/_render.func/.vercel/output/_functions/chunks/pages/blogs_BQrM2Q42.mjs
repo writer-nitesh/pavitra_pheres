@@ -189,7 +189,7 @@ createCollectionToGlobResultMap({
 });
 
 let lookupMap = {};
-lookupMap = {"posts":{"type":"content","entries":{"Preserving Cultural Heritage.Traditional Wedding Rituals of Uttarakhand":"/src/content/posts/post-3.mdx","Unforgettable Rituals of an Uttarakhand Wedding":"/src/content/posts/post-2.mdx","The Allure of Traditional Jewelry in Uttarakhand. A Timeless Elegance":"/src/content/posts/post-1.mdx","Endless Love Story of Kumaon - Rajula and Malushahi":"/src/content/posts/post-5.mdx","Why Choose Uttarakhand for Your Destination Wedding":"/src/content/posts/post-4.mdx","How to Plan a Destination Wedding. Tips for Your Dream Wedding Abroad":"/src/content/posts/post-6.mdx","Budget-Friendly Destination Wedding Planning in Uttarakhand":"/src/content/posts/post-7.mdx","The Divine Wedding Venue of Shiva-Parvati at Uttarakhand's Triyuginarayan Temple":"/src/content/posts/post-8.mdx"}}};
+lookupMap = {"posts":{"type":"content","entries":{"Preserving Cultural Heritage.Traditional Wedding Rituals of Uttarakhand":"/src/content/posts/post-3.mdx","Why Choose Uttarakhand for Your Destination Wedding":"/src/content/posts/post-4.mdx","Endless Love Story of Kumaon - Rajula and Malushahi":"/src/content/posts/post-5.mdx","Unforgettable Rituals of an Uttarakhand Wedding":"/src/content/posts/post-2.mdx","The Allure of Traditional Jewelry in Uttarakhand. A Timeless Elegance":"/src/content/posts/post-1.mdx","How to Plan a Destination Wedding. Tips for Your Dream Wedding Abroad":"/src/content/posts/post-6.mdx","Budget-Friendly Destination Wedding Planning in Uttarakhand":"/src/content/posts/post-7.mdx","The Divine Wedding Venue of Shiva-Parvati at Uttarakhand's Triyuginarayan Temple":"/src/content/posts/post-8.mdx"}}};
 
 function createGlobLookup(glob) {
 	return async (collection, lookupId) => {
@@ -200,7 +200,7 @@ function createGlobLookup(glob) {
 	};
 }
 
-const renderEntryGlob = /* #__PURE__ */ Object.assign({"/src/content/posts/post-1.mdx": () => import('../post-1_DsuTyMoQ.mjs'),"/src/content/posts/post-2.mdx": () => import('../post-2_BkhPq7Nh.mjs'),"/src/content/posts/post-3.mdx": () => import('../post-3_DFw_EBJ6.mjs'),"/src/content/posts/post-4.mdx": () => import('../post-4_B4CCfBG3.mjs'),"/src/content/posts/post-5.mdx": () => import('../post-5_BL7REfL9.mjs'),"/src/content/posts/post-6.mdx": () => import('../post-6_Ian793RA.mjs'),"/src/content/posts/post-7.mdx": () => import('../post-7_5h3ph6jd.mjs'),"/src/content/posts/post-8.mdx": () => import('../post-8_DCrQjjvZ.mjs')});
+const renderEntryGlob = /* #__PURE__ */ Object.assign({"/src/content/posts/post-1.mdx": () => import('../post-1_CUn8ng9q.mjs'),"/src/content/posts/post-2.mdx": () => import('../post-2_DigHW2_K.mjs'),"/src/content/posts/post-3.mdx": () => import('../post-3_DFw_EBJ6.mjs'),"/src/content/posts/post-4.mdx": () => import('../post-4_Bw8qaYHh.mjs'),"/src/content/posts/post-5.mdx": () => import('../post-5_D1eQTj2g.mjs'),"/src/content/posts/post-6.mdx": () => import('../post-6_Ian793RA.mjs'),"/src/content/posts/post-7.mdx": () => import('../post-7_5h3ph6jd.mjs'),"/src/content/posts/post-8.mdx": () => import('../post-8_DCrQjjvZ.mjs')});
 const collectionToRenderEntryMap = createCollectionToGlobResultMap({
 	globResult: renderEntryGlob,
 	contentDir,
@@ -219,6 +219,8 @@ const $$Info = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
   Astro2.self = $$Info;
   const { readingTime, pubDate, showShareLinks = false } = Astro2.props;
+  console.log(pubDate);
+  console.log(typeof pubDate);
   return renderTemplate`${maybeRenderHead()}<div> <div class="flex justify-between items-center"> <div class="flex gap-2 justify-center items-center"> ${renderComponent($$result, "FaCalendar", FaCalendar, { "color": "#6b7280", "size": 15 })} <span class="text-sm text-gray-500"> ${new Date(pubDate).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",

@@ -1,7 +1,7 @@
 /* empty css                          */
 import { f as createComponent, r as renderTemplate, i as renderComponent, m as maybeRenderHead } from '../astro_DVL52kWv.mjs';
 import 'kleur/colors';
-import { g as getCollection, $ as $$Card, a as $$Meta } from './blogs_CAlmjrrG.mjs';
+import { g as getCollection, $ as $$Card, a as $$Meta } from './blogs_BQrM2Q42.mjs';
 import { c as calculateReadingTime, $ as $$Layout } from './404_DDJa9XmF.mjs';
 
 const $$Index = createComponent(async ($$result, $$props, $$slots) => {
