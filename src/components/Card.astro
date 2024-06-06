@@ -7,7 +7,7 @@ export interface Props {
     data: InferEntrySchema<"posts">;
     link: string;
     readingTime: string;
-    loading: any
+    loading?: "eager" | "lazy" | null | undefined;
 }
 const { data, link, readingTime, loading } = Astro.props;
 ---
