@@ -24,11 +24,11 @@ export default defineConfig({
     {
       webAnalytics: {
         enabled: true,
-        imageService: true,
-        isr: true,
-        isr: {
-          expiration: 60 * 60,
-        },
+      },
+      imageService: true,
+      isr: true,
+      isr: {
+        expiration: 60 * 60,
       },
     }
   )
