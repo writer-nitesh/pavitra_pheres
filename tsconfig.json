@@ -6,10 +6,5 @@
     "jsx": "react-jsx",
     "jsxImportSource": "react",
     "verbatimModuleSyntax": true,
-    "types": ["astro/client"]
-  },
-  "include": [
-    "src/**/*",
-    "src/**/*.astro"
-  ]
+  }
 }
