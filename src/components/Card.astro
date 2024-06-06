@@ -19,7 +19,7 @@ const { data, link, readingTime, loading } = Astro.props;
     <div class="w-full max-h-52 min-h-52 flex flex-col">
         <Image
             decoding="async"
-            src={data.cover}
+            src={data.cover.src}
             alt="test"
             class="h-full w-full max-h-52 min-h-52 flex object-cover"
             loading={loading}
