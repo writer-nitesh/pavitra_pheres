@@ -23,8 +23,9 @@ const { data, link, readingTime, loading } = Astro.props;
             alt="test"
             class="h-full w-full max-h-52 min-h-52 flex object-cover"
             loading={loading}
-            height={500}
-            width={500}
+            height={data.cover.height}
+            width={data.cover.width}
+            format={data.cover.format}
         />
     </div>
 
