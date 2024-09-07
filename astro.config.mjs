@@ -20,8 +20,14 @@ export default defineConfig({
     Images: true
   })],
   output: "server",
-  adapter: vercel(),
-
+  adapter: vercel({
+    webAnalytics: { enabled: true }
+  }),
+  vite: {
+    ssr: {
+      noExternal: 'cookie'
+    }
+  },
   image: {
     remotePatterns: [
       {
