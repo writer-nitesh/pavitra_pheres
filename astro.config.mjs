@@ -11,7 +11,7 @@ import cloudflare from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://pavitra-pheres.vercel.app/",
+  site: "https://pavitra-pheres.pages.dev/",
   integrations: [tailwind(), react(), mdx(), sitemap(), robotsTxt(), playformCompress({
     JavaScript: true,
     HTML: true,
