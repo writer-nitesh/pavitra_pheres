@@ -2,8 +2,8 @@
 import { getCollection } from "astro:content";
 import Meta from "../components/meta.astro";
 import Layout from "../layouts/Layout.astro";
-import Card from "@components/card.astro";
 import { calculateReadingTime } from "../utils/helpers";
+import Blogcard from "@components/blogcard.astro";
 
 const heritage = await getCollection("posts", ({ data }) => {
     return data.category.includes("Cultural Heritage");
@@ -39,7 +39,7 @@ const mustReadPost = await getCollection("posts", ({ data }) => {
                 <div class="flex flex-wrap gap-8 justify-start">
                     {mustReadPost.slice(0, 4).map(({ body, data, slug }) => {
                         return (
-                            <Card
+                            <Blogcard
                                 loading="lazy"
                                 link={`/blogs/${slug}`}
                                 data={data}
@@ -66,7 +66,7 @@ const mustReadPost = await getCollection("posts", ({ data }) => {
                 <div class="flex flex-wrap gap-8 justify-start">
                     {heritage.slice(0, 4).map(({ body, data, slug }) => {
                         return (
-                            <Card
+                            <Blogcard
                                 loading="lazy"
                                 link={`/blogs/${slug}`}
                                 data={data}
@@ -92,7 +92,7 @@ const mustReadPost = await getCollection("posts", ({ data }) => {
                 <div class="flex flex-wrap gap-8 justify-start">
                     {destination.slice(0, 4).map(({ body, data, slug }) => {
                         return (
-                            <Card
+                            <Blogcard
                                 loading="lazy"
                                 link={`/blogs/${slug}`}
                                 data={data}
@@ -118,7 +118,7 @@ const mustReadPost = await getCollection("posts", ({ data }) => {
                 <div class="flex flex-wrap gap-8 justify-start">
                     {planning.slice(0, 4).map(({ body, data, slug }) => {
                         return (
-                            <Card
+                            <Blogcard
                                 loading="lazy"
                                 link={`/blogs/${slug}`}
                                 data={data}

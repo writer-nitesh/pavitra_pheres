@@ -1,9 +1,9 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
-import Card from "@components/card.astro";
 import { calculateReadingTime } from "../utils/helpers";
 import Meta from "../components/meta.astro";
+import Blogcard from "@components/blogcard.astro";
 
 const posts = await getCollection("posts", ({ data }) => {
     return data.category.includes("Cultural Heritage");
@@ -20,7 +20,7 @@ const posts = await getCollection("posts", ({ data }) => {
             {
                 posts.map(({ body, data, slug }) => {
                     return (
-                        <Card
+                        <Blogcard
                             loading="eager"
                             link={`/blogs/${slug}`}
                             data={data}
