@@ -1,7 +1,0 @@
-{
-	"expiration": 3600,
-	"allowQuery": [
-		"x_astro_path"
-	],
-	"passQuery": true
-}

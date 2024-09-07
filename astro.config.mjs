@@ -25,7 +25,15 @@ export default defineConfig({
     platformProxy: {
       enabled: true,
     },
+    imageService: "passthrough"
   }),
+
+  vite: {
+    ssr: {
+      external: ['node:buffer'],
+    },
+  },
+  
   image: {
     remotePatterns: [
       {
