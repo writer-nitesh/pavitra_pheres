@@ -10,7 +10,7 @@ import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://pavitrapheres.com",
+  site: "https://pavitra-pheres.vercel.app/",
   integrations: [tailwind(), react(), mdx(), sitemap(), robotsTxt(), playformCompress({
     JavaScript: true,
     HTML: true,
