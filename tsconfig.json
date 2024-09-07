@@ -1,10 +1,11 @@
+/// <reference path="../.astro/types.d.ts" />
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "strictNullChecks": false,
-    "allowJs": true,
-    "jsx": "react-jsx",
-    "jsxImportSource": "react",
-    "verbatimModuleSyntax": false,
+    "plugins": [
+      {
+        "name": "@astrojs/ts-plugin"
+      },
+    ],
   }
 }
