@@ -20,18 +20,7 @@ export default defineConfig({
     Images: true
   })],
   output: "server",
-  adapter: vercel(
-    {
-      webAnalytics: {
-        enabled: true,
-      },
-      imageService: true,
-      isr: true,
-      isr: {
-        expiration: 60 * 60,
-      },
-    }
-  ),
+  adapter: vercel(),
 
   image: {
     remotePatterns: [
