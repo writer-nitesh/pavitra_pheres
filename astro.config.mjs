@@ -6,7 +6,8 @@ import sitemap from "@astrojs/sitemap";
 import robotsTxt from "astro-robots-txt";
 import playformCompress from "@playform/compress";
 
-import vercel from "@astrojs/vercel/static";
+import cloudflare from "@astrojs/cloudflare";
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,14 +21,11 @@ export default defineConfig({
     Images: true
   })],
   output: "server",
-  adapter: vercel({
-    webAnalytics: { enabled: true }
+  adapter: cloudflare({
+    platformProxy: {
+      enabled: true,
+    },
   }),
-  vite: {
-    ssr: {
-      noExternal: 'cookie'
-    }
-  },
   image: {
     remotePatterns: [
       {
