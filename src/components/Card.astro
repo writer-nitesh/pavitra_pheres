@@ -7,9 +7,11 @@ export interface Props {
     data: InferEntrySchema<"posts">;
     link: string;
     readingTime: string;
-    loading?: "eager" | "lazy" | null | undefined;
+    loading: "eager" | "lazy";
 }
+
 const { data, link, readingTime, loading } = Astro.props;
+const { cover, coverAlt, title, description, pubDate } = data;
 ---
 
 <a
@@ -19,25 +21,24 @@ const { data, link, readingTime, loading } = Astro.props;
     <div class="w-full max-h-52 min-h-52 flex flex-col">
         <Image
             decoding="async"
-            src={data.cover.src}
-            alt="test"
+            src={cover.src}
+            alt={coverAlt}
             class="h-full w-full max-h-52 min-h-52 flex object-cover"
             loading={loading}
-            height={data.cover.height}
-            width={data.cover.width}
-            format={data.cover.format}
+            height={500}
+            width={500}
         />
     </div>
 
     <div class="w-full px-2 flex flex-col gap-2 my-1 h-60 justify-between">
         <h3 class="font-bold text-lg line-clamp-2 min-h-14 max-h-14">
-            {data.title}
+            {title}
         </h3>
         <p class="min-h-16 max-h-16 line-clamp-3 text-gray-500 text-sm">
-            {data.description}
+            {description}
         </p>
         <div class="py-1">
-            <Info pubDate={data.pubDate} readingTime={readingTime} />
+            <Info pubDate={pubDate} readingTime={readingTime} />
         </div>
     </div>
 </a>

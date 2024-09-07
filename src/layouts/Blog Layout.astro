@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+// import { Image } from "astro:assets";
 import Info from "../components/blog/info.astro";
 import Share from "../components/blog/share.astro";
 import Layout from "./Layout.astro";
@@ -53,11 +53,11 @@ const {
                     imgSourceLink={coverImgSourceLink}
                     imgSourceName={coverImgSourceName}
                 >
-                    <Image
-                        src={cover}
+                    <img
+                        src={cover.src}
                         alt={coverAlt}
-                        class={"object-cover p-0 w-full h-full rounded-lg"}
-                        loading={"eager"}
+                        class="object-cover p-0 w-full h-full rounded-lg"
+                        loading="eager"
                     />
                 </Img>
             </section>
@@ -80,10 +80,9 @@ const {
                 <Share title={title} description={description} />
             </div>
 
-        
-                <Related relatedBlogs={relatedPosts} />
-            
+            <Related relatedBlogs={relatedPosts} />
 
         </div>
     </div>
 </Layout>
+

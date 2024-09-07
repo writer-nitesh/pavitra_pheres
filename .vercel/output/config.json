@@ -1,0 +1,74 @@
+{
+	"version": 3,
+	"routes": [
+		{
+			"src": "^/_astro/(.*)$",
+			"headers": {
+				"cache-control": "public, max-age=31536000, immutable"
+			},
+			"continue": true
+		},
+		{
+			"handle": "filesystem"
+		},
+		{
+			"src": "^\\/_image$",
+			"dest": "_render"
+		},
+		{
+			"src": "^\\/404\\/?$",
+			"dest": "/_isr?x_astro_path=$0"
+		},
+		{
+			"src": "^\\/about\\/?$",
+			"dest": "/_isr?x_astro_path=$0"
+		},
+		{
+			"src": "^\\/blogs\\/?$",
+			"dest": "/_isr?x_astro_path=$0"
+		},
+		{
+			"src": "^\\/contact\\/?$",
+			"dest": "/_isr?x_astro_path=$0"
+		},
+		{
+			"src": "^\\/cultural-heritage\\/?$",
+			"dest": "/_isr?x_astro_path=$0"
+		},
+		{
+			"src": "^\\/destination\\/?$",
+			"dest": "/_isr?x_astro_path=$0"
+		},
+		{
+			"src": "^\\/planning\\/?$",
+			"dest": "/_isr?x_astro_path=$0"
+		},
+		{
+			"src": "^\\/$",
+			"dest": "/_isr?x_astro_path=$0"
+		},
+		{
+			"src": "/.*",
+			"dest": "_render",
+			"status": 404
+		}
+	],
+	"images": {
+		"sizes": [
+			640,
+			750,
+			828,
+			1080,
+			1200,
+			1920,
+			2048,
+			3840
+		],
+		"domains": [],
+		"remotePatterns": [
+			{
+				"protocol": "https"
+			}
+		]
+	}
+}

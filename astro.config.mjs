@@ -31,5 +31,13 @@ export default defineConfig({
         expiration: 60 * 60,
       },
     }
-  )
+  ),
+
+  image: {
+    remotePatterns: [
+      {
+        protocol: "https",
+      },
+    ],
+  }
 });
