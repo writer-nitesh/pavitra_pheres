@@ -1,6 +1,6 @@
 # **Pavitra Pheres**
 
-[Live Here](www.pavitra-pheres.pages.dev)
+[Live Here](https://pavitra-pheres.pages.dev/)
 
 *Crafting Timeless Memories Amidst Himalayan Serenity.*
 
